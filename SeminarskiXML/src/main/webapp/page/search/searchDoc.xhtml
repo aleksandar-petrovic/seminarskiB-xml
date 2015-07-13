@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Образац ППС 1</title>
+
+	<h:outputStylesheet library="css" name="search.doc.css" />
+
+</h:head>
+<h:body>
+
+	<f:view>
+
+		<h1>Документи</h1>
+
+		<p:button styleClass="backButton" value="Назад" icon="ui-icon-arrow"
+			outcome="/page/search/search"></p:button>
+
+		<div align="center">
+			<h:form>
+				<h:panelGrid styleClass="panelGrid">
+					<p:dataTable id="dataTable" var="doc"
+						value="#{searchManagedBean.documents}"
+						emptyMessage="Тражени документи не постоје">
+						<p:column styleClass="columnNumber" headerText="Број">
+							<h:outputText value="#{doc.broj}" />
+						</p:column>
+
+						<p:column styleClass="column" headerText="Датум пријема">
+							<p:calendar pattern="dd MMM yyyy" locale="sr" size="11"
+								effect="explode" placeholder="Изабери датум"
+								value="#{doc.datumPrijema}"></p:calendar>
+						</p:column>
+
+						<p:column styleClass="column" headerText="Надлежни орган">
+							<h:outputText value="#{doc.nadlezniOrgan}" />
+						</p:column>
+
+						<p:column styleClass="column" headerText="Гранични прелаз">
+							<h:outputText value="#{doc.granicniPrelaz}" />
+						</p:column>
+
+						<p:column styleClass="column" headerText="Врста пријаве">
+							<h:outputText value="#{doc.vrstaPrijave}" />
+						</p:column>
+						<p:column styleClass="columnButton">
+							<p:commandButton styleClass="changeButton" value="Измени"
+								action="#{searchManagedBean.showDocument}"
+								actionListener="#{searchManagedBean.showDocumentListener}">
+								<f:attribute name="documentId" value="#{doc.documentId}" />
+							</p:commandButton>
+						</p:column>
+
+						<p:column styleClass="columnButton">
+
+							<p:dialog widgetVar="statusDialog" modal="true" draggable="false"
+								closable="false" resizable="false" showHeader="false">
+								<p:graphicImage name="image/loadbar.gif" />
+							</p:dialog>
+
+							<p:commandButton styleClass="deleteButton" value="Обриши"
+								onstart="PF('statusDialog').show()"
+								oncomplete="PF('statusDialog').hide()"
+								action="#{searchManagedBean.removeDocument}"
+								actionListener="#{searchManagedBean.removeDocumentListener}"
+								update="dataTable">
+								<f:attribute name="documentId" value="#{doc.documentId}" />
+							</p:commandButton>
+						</p:column>
+					</p:dataTable>
+				</h:panelGrid>
+			</h:form>
+		</div>
+
+
+	</f:view>
+</h:body>
+</html>

@@ -1,0 +1,53 @@
+body {
+	background-color: #96D0FA;
+}
+
+.ui-widget {
+	font-size: 90% !important;
+}
+
+/* input polja */
+.ui-inputfield {
+	background-color: #D5FA7F !important;
+}
+
+h1 {
+	text-align: center;
+}
+
+.backButton {
+	width: 100px;
+	margin-left: 15%;
+	margin-bottom: 1%;
+	background-color: #D5FA7F;
+}
+
+.panelGrid {
+	width: 80%;
+}
+
+.column {
+	text-align: center;
+}
+
+.columnNumber {
+	text-align: center;
+	width: 50px;
+}
+
+.columnButton {
+	text-align: center;
+	width: 100px;
+}
+
+.changeButton {
+	background-color: #D5FA7F !important;
+}
+
+.deleteButton {
+	background-color: #ff7d7d!important;
+}
+
+.hasDatepicker {
+	text-align: center !important;
+}

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Aleksandar (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="ObrazacPPS1">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ObrazacPPS1Type">
+					<xs:attribute name="Broj" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ObrazacPPS1Type">
+		<xs:sequence>
+			<xs:element name="OsnovneInformacije" type="OsnovneInformacijeType"/>
+			<xs:element name="Deo1" type="Deo1Type" minOccurs="0"/>
+			<xs:element name="Deo2OpisFizickiPrenosivihSredstavaPlacanja" type="Deo2OpisFizickiPrenosivihSredstavaPlacanjaType" minOccurs="0"/>
+			<xs:element name="Deo3PorekloINamenaFizickiPrenosivihSredstavaPlacanja" type="Deo3PorekloINamenaFizickiPrenosivihSredstavaPlacanjaType" minOccurs="0"/>
+			<xs:element name="Deo4PodaciOPrevozu" type="Deo4PodaciOPrevozuType" minOccurs="0"/>
+			<xs:element name="Zakljucak" type="ZakljucakType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OsnovneInformacijeType">
+		<xs:sequence>
+			<xs:element name="DatumPrijemaPrijave" type="xs:date"/>
+			<xs:element name="PrijavaPrenosa">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Da"/>
+						<xs:enumeration value="Ne"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="NadlezniOrgan" type="xs:string"/>
+			<xs:element name="GranicniPrelaz" type="xs:string"/>
+			<xs:element name="VrstaPrijave">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Ulazak u RS"/>
+						<xs:enumeration value="Izlazak iz RS"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Deo1Type">
+		<xs:sequence>
+			<xs:element name="PodaciOPodnosiocuPrijave" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="OsnovneInformacije" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="ImePrezime" type="xs:string" minOccurs="0"/>
+									<xs:element name="Drzavljanstvo" type="xs:string" minOccurs="0"/>
+									<xs:element name="DatumRodjenja" type="xs:date" minOccurs="0"/>
+									<xs:element name="MestoRodjenja" type="xs:string" minOccurs="0"/>
+									<xs:element name="Zanimanje" type="xs:string" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Adresa" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="AdresaStanovanja" type="xs:string" minOccurs="0"/>
+									<xs:element name="Grad" type="xs:string" minOccurs="0"/>
+									<xs:element name="PostanskiBroj" type="xs:int" minOccurs="0"/>
+									<xs:element name="Drzava" type="xs:string" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Pasos" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Broj" type="xs:int" minOccurs="0"/>
+									<xs:element name="DatumIzdavanja" type="xs:date" minOccurs="0"/>
+									<xs:element name="MestoIzdavanja" type="xs:string" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PodaciOVlasnikuSredstava" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="OsnovneInformacije" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="ImePrezime" type="xs:string" minOccurs="0"/>
+									<xs:element name="Drzavljanstvo" type="xs:string" minOccurs="0"/>
+									<xs:element name="DatumRodjenja" type="xs:date" minOccurs="0"/>
+									<xs:element name="MestoRodjenja" type="xs:string" minOccurs="0"/>
+									<xs:element name="Zanimanje" type="xs:string" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Adresa" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="AdresaStanovanja" type="xs:string" minOccurs="0"/>
+									<xs:element name="Grad" type="xs:string" minOccurs="0"/>
+									<xs:element name="PostanskiBroj" type="xs:int" minOccurs="0"/>
+									<xs:element name="Drzava" type="xs:string" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Pasos" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Broj" type="xs:int" minOccurs="0"/>
+									<xs:element name="DatumIzdavanja" type="xs:date" minOccurs="0"/>
+									<xs:element name="MestoIzdavanja" type="xs:string" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Deo2OpisFizickiPrenosivihSredstavaPlacanjaType">
+		<xs:sequence>
+			<xs:element name="Novcanice" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Iznos" type="xs:float" minOccurs="0"/>
+						<xs:element name="Valuta" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Cekovi" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Iznos" type="xs:float" minOccurs="0"/>
+						<xs:element name="Valuta" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Drugo" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Iznos" type="xs:float" minOccurs="0"/>
+						<xs:element name="Valuta" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Deo3PorekloINamenaFizickiPrenosivihSredstavaPlacanjaType">
+		<xs:sequence>
+			<xs:element name="Poreklo" type="xs:string" minOccurs="0"/>
+			<xs:element name="PrimalacSredstava" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ImePrezime" type="xs:string" minOccurs="0"/>
+						<xs:element name="Adresa" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="NamenaSredstava" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Deo4PodaciOPrevozuType">
+		<xs:sequence>
+			<xs:element name="NacinPrevoza" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Vazdusni"/>
+						<xs:enumeration value="Drumski"/>
+						<xs:enumeration value="Zeleznicki"/>
+						<xs:enumeration value="Recni"/>
+						<xs:enumeration value="Drugi"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="NacinPrevozaDrugi" type="xs:string" minOccurs="0"/>
+			<xs:element name="Marsuta" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ZemljaPolaska" type="xs:string" minOccurs="0"/>
+						<xs:element name="ZemljaTranzita" type="xs:string" minOccurs="0"/>
+						<xs:element name="ZemljaDolaska" type="xs:string" minOccurs="0"/>
+						<xs:element name="DatumPolaska" type="xs:date" minOccurs="0"/>
+						<xs:element name="DatumDolaska" type="xs:date" minOccurs="0"/>
+						<xs:element name="TransportnoPreduzece" type="xs:string" minOccurs="0"/>
+						<xs:element name="ReferentniBroj" type="xs:int" minOccurs="0"/>
+						<xs:element name="DaLiJeOvoVasPrviDolazak" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Da"/>
+									<xs:enumeration value="Ne"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="BrojDolazaka" type="xs:int" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ZakljucakType">
+		<xs:sequence>
+			<xs:element name="PotpisPodnosioca" type="xs:string" minOccurs="0"/>
+			<xs:element name="PrimedbeNadleznogOrgana" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

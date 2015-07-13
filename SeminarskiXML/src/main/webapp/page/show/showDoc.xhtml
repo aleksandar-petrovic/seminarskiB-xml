@@ -1,0 +1,609 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Образац ППС 1</title>
+
+	<h:outputStylesheet library="css" name="new.doc.css" />
+
+</h:head>
+<h:body>
+
+	<h1>Измени образац</h1>
+
+
+	<p:button styleClass="backButton" value="Назад" icon="ui-icon-arrow"
+		outcome="/page/search/searchDoc"></p:button>
+
+	<div align="center">
+
+		<h:form id="form">
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="flag">
+						<p:graphicImage name="image/flag.png"></p:graphicImage>
+					</p:column>
+					<p:column styleClass="columnBC">РЕПУБЛИКА СРБИЈА</p:column>
+					<p:column styleClass="columnW10C">Број</p:column>
+					<p:column styleClass="columnW40">
+						<p:inputText id="number" styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.broj}" required="true">
+							<f:validator validatorId="integerValidator" />
+						</p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW25">Датум пријема пријаве</p:column>
+					<p:column styleClass="columnW25C">
+						<p:calendar pattern="dd MMM yyyy" locale="sr" size="11"
+							effect="explode" placeholder="Изабери датум"
+							value="#{searchManagedBean.chosen.datumPrijema}" required="true"
+							navigator="true" yearRange="c-100:c+1"></p:calendar>
+					</p:column>
+					<p:column styleClass="columnW50">Пријава преноса физички преносивих средстава плаћања преко државне границе 
+				<br></br>
+						<div align="center">
+							<p:selectOneRadio
+								value="#{searchManagedBean.chosen.prijavaPrenosa}"
+								required="true">
+								<f:selectItem itemLabel="ДА" itemValue="Da" />
+								<f:selectItem itemLabel="НЕ" itemValue="Ne" />
+							</p:selectOneRadio>
+						</div>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW25">Надлежни орган за пријем пријаве</p:column>
+					<p:column styleClass="columnW25">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.nadlezniOrgan}" required="true"></p:inputText>
+					</p:column>
+					<p:column styleClass="columnW50"></p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW25">Гранични прелаз</p:column>
+					<p:column styleClass="columnW25">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.granicniPrelaz}"
+							required="true"></p:inputText>
+					</p:column>
+					<p:column styleClass="columnW50"></p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW25">Врста пријаве</p:column>
+					<p:column>
+						<div align="center">
+							<p:selectOneRadio
+								value="#{searchManagedBean.chosen.vrstaPrijave}" required="true">
+								<f:selectItem itemLabel="Улазак у РС" itemValue="Ulazak u RS" />
+								<f:selectItem itemLabel="Излазак из РС"
+									itemValue="Izlazak iz RS" />
+							</p:selectOneRadio>
+						</div>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnHeader">ДЕО I</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW50C">Подаци о подносиоцу пријаве</p:column>
+					<p:column styleClass="columnW50C">Подаци о власнику физички преносивих средстава плаћања ако није истовремено подносилац пријаве</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW20C">Име и презиме</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.imePrezimeP}"></p:inputText>
+					</p:column>
+					<p:column styleClass="columnW20C">Име и презиме или назив правног лица</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.imePrezimeV}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW20C">Држављанство</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.drzavljanstvoP}"></p:inputText>
+					</p:column>
+					<p:column styleClass="columnW20C">Држављанство</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.drzavljanstvoV}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW20C">Датум рођења</p:column>
+					<p:column styleClass="columnW30C">
+						<p:calendar pattern="dd MMM yyyy" locale="sr" size="11"
+							effect="explode" placeholder="Изабери датум"
+							value="#{searchManagedBean.chosen.datumRodjenjaP}"
+							navigator="true" yearRange="c-100:c+1"></p:calendar>
+					</p:column>
+					<p:column styleClass="columnW20C">Датум рођења</p:column>
+					<p:column styleClass="columnW30C">
+						<p:calendar pattern="dd MMM yyyy" locale="sr" size="11"
+							effect="explode" placeholder="Изабери датум"
+							value="#{searchManagedBean.chosen.datumRodjenjaV}"
+							navigator="true" yearRange="c-100:c+1"></p:calendar>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW20C">Место рођења</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.mestoRodjenjaP}"></p:inputText>
+					</p:column>
+					<p:column styleClass="columnW20C">Место рођења</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.mestoRodjenjaV}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW20C">Занимање</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.zanimanjeP}"></p:inputText>
+					</p:column>
+					<p:column styleClass="columnW20C">Занимање</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.zanimanjeV}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW20C">Адреса становања</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.adresaP}"></p:inputText>
+					</p:column>
+					<p:column styleClass="columnW20C">Адреса становања</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.adresaV}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW20C">Град</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.gradP}"></p:inputText>
+					</p:column>
+					<p:column styleClass="columnW20C">Град</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.gradV}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW20C">Поштански број</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText id="postanskiBrojP" styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.postanskiBrojP}">
+							<f:validator validatorId="integerValidator" />
+						</p:inputText>
+					</p:column>
+					<p:column styleClass="columnW20C">Поштански број</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText id="postanskiBrojV" styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.postanskiBrojV}">
+							<f:validator validatorId="integerValidator" />
+						</p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW20C">Држава</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.drzavaP}"></p:inputText>
+					</p:column>
+					<p:column styleClass="columnW20C">Држава</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.drzavaV}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW50C">Подаци о пасошу или личној карти</p:column>
+					<p:column styleClass="columnW50C">Подаци о пасошу или личној карти</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW20C">Број</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText id="pasosBrojP" styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.pasosBrojP}">
+							<f:validator validatorId="integerValidator" />
+						</p:inputText>
+					</p:column>
+					<p:column styleClass="columnW20C">Број</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText id="pasosBrojV" styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.pasosBrojV}">
+							<f:validator validatorId="integerValidator" />
+						</p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW20C">Датум издавања</p:column>
+					<p:column styleClass="columnW30C">
+						<p:calendar pattern="dd MMM yyyy" locale="sr" size="11"
+							effect="explode" placeholder="Изабери датум"
+							value="#{searchManagedBean.chosen.pasosDatumP}" navigator="true"
+							yearRange="c-100:c+1"></p:calendar>
+					</p:column>
+					<p:column styleClass="columnW20C">Датум издавања</p:column>
+					<p:column styleClass="columnW30C">
+						<p:calendar pattern="dd MMM yyyy" locale="sr" size="11"
+							effect="explode" placeholder="Изабери датум"
+							value="#{searchManagedBean.chosen.pasosDatumV}" navigator="true"
+							yearRange="c-100:c+1"></p:calendar>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW20C">Место издавања</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.pasosMestoP}"></p:inputText>
+					</p:column>
+					<p:column styleClass="columnW20C">Место издавања</p:column>
+					<p:column styleClass="columnW30">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.pasosMestoV}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnHeader">ДЕО II: ОПИС ФИЗИЧКИ ПРЕНОСИВИХ СРЕДСТАВА ПЛАЋАЊА</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW33"></p:column>
+					<p:column styleClass="columnW33C">Износ</p:column>
+					<p:column styleClass="columnW33C">Валута</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW33C">Новчанице, ковани новац</p:column>
+					<p:column styleClass="columnW33">
+						<p:inputText id="novcaniceIznos" styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.novcaniceIznos}">
+							<f:validator validatorId="doubleValidator" />
+						</p:inputText>
+					</p:column>
+					<p:column styleClass="columnW33">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.novcaniceValuta}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW33C">Чекови, путнички чекови</p:column>
+					<p:column styleClass="columnW33">
+						<p:inputText id="cekoviIznos" styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.cekoviIznos}">
+							<f:validator validatorId="doubleValidator" />
+						</p:inputText>
+					</p:column>
+					<p:column styleClass="columnW33">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.cekoviValuta}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW33C">Друго (наведите)</p:column>
+					<p:column styleClass="columnW33">
+						<p:inputText id="drugoIznos" styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.drugoIznos}">
+							<f:validator validatorId="doubleValidator" />
+						</p:inputText>
+					</p:column>
+					<p:column styleClass="columnW33">
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.chosen.drugoValuta}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnHeader">ДЕО III: ПОРЕКЛО И НАМЕНА ФИЗИЧКИ ПРЕНОСИВИХ СРЕДСТАВА ПЛАЋАЊА</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW33C">Порекло</p:column>
+					<p:column styleClass="columnW66">
+						<p:inputText styleClass="inputTextW99C"
+							value="#{searchManagedBean.chosen.poreklo}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW33C">Прималац средстава (ако нисте ви)</p:column>
+					<p:column styleClass="columnW66C">
+						<p:panelGrid styleClass="innerPanelGrid">
+							<p:row>
+								<p:column styleClass="columnW50C">Име и презиме</p:column>
+								<p:column styleClass="columnW50C">
+									<p:inputText styleClass="inputTextW95C"
+										value="#{searchManagedBean.chosen.imePrezimePrimalacSredstava}"></p:inputText>
+								</p:column>
+							</p:row>
+							<p:row>
+								<p:column styleClass="columnW50C">Адреса</p:column>
+								<p:column styleClass="columnW50C">
+									<p:inputText styleClass="inputTextW95C"
+										value="#{searchManagedBean.chosen.adresaPrimalacSredstava}"></p:inputText>
+								</p:column>
+							</p:row>
+						</p:panelGrid>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW33C">Намена средстава</p:column>
+					<p:column styleClass="columnW66">
+						<p:inputText styleClass="inputTextW99C"
+							value="#{searchManagedBean.chosen.namenaSredstava}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnHeader">ДЕО IV: ПОДАЦИ О ПРЕВОЗУ</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW20C">Начин превоза</p:column>
+					<p:column>
+						<div align="center">
+							<p:selectOneRadio id="nacinPrevoza"
+								value="#{searchManagedBean.chosen.nacinPrevoza}" required="true">
+								<f:selectItem itemLabel="Ваздушни" itemValue="Vazdusni" />
+								<f:selectItem itemLabel="Друмски" itemValue="Drumski" />
+								<f:selectItem itemLabel="Железнички" itemValue="Zeleznicki" />
+								<f:selectItem itemLabel="Речни" itemValue="Recni" />
+								<f:selectItem itemLabel="Други" itemValue="Drugi" />
+							</p:selectOneRadio>
+						</div>
+					</p:column>
+					<p:column styleClass="columnW40">
+						<p:inputText id="drugi" styleClass="inputTextW99C"
+							value="#{searchManagedBean.chosen.nacinPrevozaDrugi}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnMarsuta">Маршрута</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW17C">Земља поласка</p:column>
+					<p:column styleClass="columnW17">
+						<p:inputText styleClass="inputTextW95C"
+							value="#{searchManagedBean.chosen.zemljaPolaska}"></p:inputText>
+					</p:column>
+					<p:column styleClass="columnW17C">Земља транзита</p:column>
+					<p:column styleClass="columnW17">
+						<p:inputText styleClass="inputTextW95C"
+							value="#{searchManagedBean.chosen.zemljaTranzita}"></p:inputText>
+					</p:column>
+					<p:column styleClass="columnW17C">Земља доласка</p:column>
+					<p:column styleClass="columnW17">
+						<p:inputText styleClass="inputTextW95C"
+							value="#{searchManagedBean.chosen.zemljaDolaska}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW17C">Датим поласка</p:column>
+					<p:column styleClass="columnW17C">
+						<p:calendar pattern="dd MMM yyyy" locale="sr" size="11"
+							effect="explode" placeholder="Изабери датум"
+							value="#{searchManagedBean.chosen.datumPolaska}" navigator="true"
+							yearRange="c-100:c+1"></p:calendar>
+					</p:column>
+					<p:column styleClass="columnW17C">Датум доласкa</p:column>
+					<p:column styleClass="columnW17C">
+						<p:calendar pattern="dd MMM yyyy" locale="sr" size="11"
+							effect="explode" placeholder="Изабери датум"
+							value="#{searchManagedBean.chosen.datumDolaska}" navigator="true"
+							yearRange="c-100:c+1"></p:calendar>
+					</p:column>
+					<p:column></p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW25C">Транспортно предузеће</p:column>
+					<p:column styleClass="columnW75">
+						<p:inputText styleClass="inputTextW99C"
+							value="#{searchManagedBean.chosen.transportnoPreduzece}"></p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW25C">Референтни број (нпр. број лета)</p:column>
+					<p:column styleClass="columnW75">
+						<p:inputText id="referentniBroj" styleClass="inputTextW99C"
+							value="#{searchManagedBean.chosen.referentniBroj}">
+							<f:validator validatorId="integerValidator" />
+						</p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW30C">Да ли је ово ваш први долазак у РС?</p:column>
+					<p:column>
+						<div align="center">
+							<p:selectOneRadio id="posete"
+								value="#{searchManagedBean.chosen.prviDolazak}" required="true">
+								<f:selectItem itemLabel="Да" itemValue="Da" />
+								<f:selectItem itemLabel="Не (Наведите број посета)"
+									itemValue="Ne" />
+							</p:selectOneRadio>
+
+						</div>
+					</p:column>
+					<p:column styleClass="columnW40">
+						<p:inputText id="broj" styleClass="inputTextW99C"
+							value="#{searchManagedBean.chosen.brojPoseta}">
+							<f:validator validatorId="integerValidator" />
+						</p:inputText>
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnHeaderW50">Својим потписом потврђујем да су сви горе наведени подаци тачни</p:column>
+					<p:column styleClass="columnHeaderW50">Примедбе надлежног органа</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW50C">
+						Подносилац пријаве
+						<canvas id="sig" width="480px" height="80px"></canvas>
+					</p:column>
+					<p:column rowspan="2" styleClass="columnW50C">
+						<p:inputTextarea styleClass="inputTextArea" autoResize="true"
+							rows="5" value="#{searchManagedBean.chosen.primedba}" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+
+			<p:commandButton styleClass="saveButton" value="Сачувај"
+				action="#{searchManagedBean.changeDocument}"
+				onclick="return check()">
+				<f:ajax execute="@form" render="@form"></f:ajax>
+			</p:commandButton>
+
+
+			<p:inputText id="imageURL"
+				value="#{searchManagedBean.chosen.imageURL}" style="display: none"></p:inputText>
+
+
+		</h:form>
+
+	</div>
+
+	<script src="/SeminarskiXML/resources/js/jscript.js"></script>
+	<script src="/SeminarskiXML/resources/js/calendar.js"></script>
+	<script src="/SeminarskiXML/resources/js/signature.js"></script>
+
+	<script>
+		// 		ucita sliku u canvas
+		function initImage() {
+			putImageData(document.getElementById("form:imageURL").value);
+		};
+
+		initImage();
+	</script>
+
+
+</h:body>
+</html>

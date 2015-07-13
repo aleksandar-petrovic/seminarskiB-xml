@@ -1,0 +1,194 @@
+/* required polje  */
+.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error
+	{
+	border: 2px solid red;
+}
+
+/* input polja */
+.ui-inputfield {
+	background-color: #D5FA7F !important;
+}
+
+.hasDatepicker {
+	text-align: center !important;
+}
+
+.ui-widget {
+	font-size: 90% !important;
+}
+
+body {
+	background-color: #96D0FA;
+}
+
+.panelGrid {
+	width: 80%;
+}
+
+h1 {
+	text-align: center;
+}
+
+.innerPanelGrid {
+	border: hidden;
+	width: 100%;
+}
+
+#header {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+canvas {
+	border: black 1px solid;
+	cursor: url(./image/cursor.png), auto;
+}
+
+.saveButton {
+	margin-top: 1%;
+	width: 300px;
+	height: 50px;
+	background-color: #D5FA7F;
+}
+
+.backButton {
+	width: 100px;
+	margin-left: 15%;
+	margin-bottom: 1%;
+	background-color: #D5FA7F;
+}
+
+.flag {
+	width: 80px;
+}
+
+.columnBC {
+	font-weight: bold;
+	text-align: center;
+}
+
+.columnHeader {
+	text-align: center;
+	font-weight: bold;
+	height: 50px;
+}
+
+.columnMarsuta {
+	width: 100%;
+	text-align: center;
+	height: 30px;
+}
+
+.inputTextArea {
+	width: 98%;
+	height: 100%;
+}
+
+.inputTextW99C {
+	width: 99%;
+	text-align: center;
+}
+
+.inputTextW98C {
+	width: 98%;
+	text-align: center;
+}
+
+.inputTextW95C {
+	width: 95%;
+	text-align: center;
+}
+
+.columnW75 {
+	width: 75%
+}
+
+.columnW66C {
+	width: 66%;
+	text-align: center;
+}
+
+.columnW66 {
+	width: 66%
+}
+
+.columnHeaderW50 {
+	text-align: center;
+	font-weight: bold;
+	height: 50px;
+	width: 50%;
+}
+
+.columnHeaderW50 {
+	text-align: center;
+	font-weight: bold;
+	height: 50px;
+	width: 50%;
+}
+
+.columnW50C {
+	width: 50%;
+	text-align: center;
+}
+
+.columnW50 {
+	width: 50%
+}
+
+.columnW40 {
+	width: 40%
+}
+
+.columnW40 {
+	width: 40%;
+}
+
+.columnW33C {
+	width: 33%;
+	text-align: center;
+}
+
+.columnW33 {
+	width: 33%
+}
+
+.columnW30 {
+	width: 30%
+}
+
+.columnW30C {
+	width: 30%;
+	text-align: center;
+}
+
+.columnW25C {
+	width: 25%;
+	text-align: center;
+}
+
+.columnW25 {
+	width: 25%
+}
+
+.columnW20C {
+	width: 20%;
+	text-align: center;
+}
+
+.columnW20 {
+	width: 20%;
+}
+
+.columnW17C {
+	width: 17%;
+	text-align: center;
+}
+
+.columnW17 {
+	width: 17%;
+}
+
+.columnW10C {
+	width: 10%;
+	text-align: center;
+}

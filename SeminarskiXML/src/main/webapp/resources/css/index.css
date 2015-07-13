@@ -1,0 +1,14 @@
+body {
+	background-color: #96D0FA;
+}
+
+#main {
+	margin: 10%;
+	align: center;
+	text-align: center;
+}
+
+.button {
+	width: 300px;
+	background-color: #D5FA7F;
+}

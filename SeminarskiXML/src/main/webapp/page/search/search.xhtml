@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Образац ППС 1</title>
+
+	<h:outputStylesheet library="css" name="search.css" />
+
+</h:head>
+<h:body>
+
+	<h1>Претражи обрасце</h1>
+
+	<p:button styleClass="backButton" value="Назад" icon="ui-icon-arrow"
+		outcome="/index"></p:button>
+
+	<div align="center">
+
+		<h:form>
+
+			<p:panelGrid styleClass="panelGrid">
+				<p:row>
+					<p:column styleClass="columnW50C">Број</p:column>
+					<p:column>
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.broj}"></p:inputText>
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column styleClass="columnW50C">Датум пријема пријаве</p:column>
+					<p:column style="text-align: center;">
+						<p:calendar value="#{searchManagedBean.datumPrijema}"
+							pattern="dd MMM yyyy" locale="sr" size="11" effect="explode"
+							placeholder="Изабери датум" navigator="true"
+							yearRange="c-100:c+1"></p:calendar>
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column styleClass="columnW50C">Надлежни орган за пријем пријаве</p:column>
+					<p:column>
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.nadlezniOrgan}"></p:inputText>
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column styleClass="columnW50C">Гранични прелаз</p:column>
+					<p:column>
+						<p:inputText styleClass="inputTextW98C"
+							value="#{searchManagedBean.granicniPrelaz}"></p:inputText>
+					</p:column>
+				</p:row>
+
+				<p:row>
+					<p:column styleClass="columnW50C">Врста пријаве</p:column>
+					<p:column>
+						<div align="center">
+							<p:selectOneRadio value="#{searchManagedBean.vrstaPrijave}">
+								<f:selectItem itemLabel="Улазак у РС" itemValue="Ulazak u RS" />
+								<f:selectItem itemLabel="Излазак из РС"
+									itemValue="Izlazak iz RS" />
+							</p:selectOneRadio>
+						</div>
+					</p:column>
+				</p:row>
+
+			</p:panelGrid>
+
+
+
+			<!-- loading bar -->
+			<p:ajaxStatus onstart="PF('statusDialog').show()"
+				onsuccess="PF('statusDialog').hide()" />
+			<p:dialog widgetVar="statusDialog" modal="true" draggable="false"
+				closable="false" resizable="false" showHeader="false">
+				<p:graphicImage name="image/loadbar.gif" />
+			</p:dialog>
+
+
+			<p:commandButton styleClass="searchButton" value="Претражи"
+				action="#{searchManagedBean.search}">
+			</p:commandButton>
+
+		</h:form>
+
+	</div>
+
+	<script src="/SeminarskiXML/resources/js/calendar.js"></script>
+
+</h:body>
+</html>
